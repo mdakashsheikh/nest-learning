@@ -1,0 +1,13 @@
+# The Database
+database:
+  image: mysql:5.7
+  volumes:
+    - dbdata:/var/lib/mysql
+  restart: always
+  environment:
+    MYSQL_ROOT_PASSWORD: secret
+    MYSQL_DATABASE: prisma
+    MYSQL_USER: root
+    MYSQL_PASSWORD: secret
+  ports:
+    - "33036:3306"
